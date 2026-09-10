@@ -1,0 +1,88 @@
+.section {
+  padding: 110px 0;
+}
+
+.container {
+  width: min(1280px, calc(100% - 80px));
+  margin-inline: auto;
+}
+
+.header {
+  text-align: left;
+  margin-bottom: 48px;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--deepGold);
+  margin-bottom: 4px;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(42px, 4vw, 64px);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  color: var(--text);
+}
+
+.goldText { color: var(--gold); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.benefit {
+  text-align: center;
+  padding: 28px 20px;
+  background: var(--white);
+  border: 1px solid rgba(233, 221, 187, 0.3);
+  border-radius: 12px;
+  will-change: transform;
+}
+
+.benefit:hover {
+  border-color: rgba(244, 185, 0, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.iconCircle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  will-change: transform;
+}
+
+.benefitTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.benefitDesc {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--secondaryText);
+}
+
+@media (max-width: 768px) {
+  .container { width: min(1280px, calc(100% - 40px)); }
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}
+
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr; }
+}

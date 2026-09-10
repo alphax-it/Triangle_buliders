@@ -1,0 +1,112 @@
+.about {
+  padding: 80px 0 110px;
+  background: var(--cream);
+}
+
+.container {
+  width: min(1280px, calc(100% - 80px));
+  margin-inline: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.48fr 0.52fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.content {
+  min-width: 0;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--deepGold);
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(42px, 4vw, 64px);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.text p {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--secondaryText);
+  margin-bottom: 14px;
+}
+
+.highlight {
+  font-family: var(--font-body);
+  font-size: 18px !important;
+  font-weight: 600;
+  color: var(--text) !important;
+  line-height: 1.6 !important;
+  margin-bottom: 18px !important;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 12px 28px;
+  background: var(--gold);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  will-change: transform;
+}
+
+.ctaArrow {
+  display: inline-flex;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta:hover .ctaArrow {
+  transform: translateX(4px);
+}
+
+.visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-width: 0;
+  border-radius: 16px;
+}
+
+.aboutImg {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  will-change: transform;
+}
+
+@media (max-width: 960px) {
+  .grid { grid-template-columns: 1fr; gap: 40px; }
+  .about { padding: 80px 0; }
+  .aboutImg { max-width: 420px; margin: 0 auto; display: block; }
+}
+
+@media (max-width: 600px) {
+  .container { width: min(1280px, calc(100% - 40px)); }
+}

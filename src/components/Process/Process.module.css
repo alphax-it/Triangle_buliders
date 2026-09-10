@@ -1,0 +1,224 @@
+.section {
+  padding: 100px 0;
+  background: var(--cream);
+  position: relative;
+}
+
+.container {
+  width: min(1280px, calc(100% - 80px));
+  margin-inline: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 48px;
+  margin-bottom: 56px;
+}
+
+.headerLeft {
+  flex-shrink: 0;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--deepGold);
+  margin-bottom: 10px;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(48px, 5vw, 76px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  color: var(--text);
+}
+
+.gold { color: var(--gold); }
+
+.headerDesc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--secondaryText);
+  max-width: 420px;
+  flex-shrink: 0;
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+  align-items: start;
+  transition: grid-template-columns 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+  min-width: 0;
+}
+
+.card.active {
+  height: auto;
+  min-height: 300px;
+  max-height: 330px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(244, 185, 0, 0.45);
+}
+
+.card.active {
+  background: #FFFEF5;
+  border-color: var(--gold);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+}
+
+.iconBox {
+  width: 50px;
+  height: 50px;
+  border: 1px solid var(--border);
+  background: var(--cream);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  will-change: transform;
+}
+
+.num {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--deepGold);
+  margin-top: 18px;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  margin-top: 10px;
+  transition: color 0.3s ease;
+}
+
+.card:hover .title,
+.card.active .title {
+  color: var(--deepGold);
+}
+
+.desc {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--secondaryText);
+  margin-top: 10px;
+}
+
+.expanded {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(233, 221, 187, 0.6);
+}
+
+.expandedText {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--secondaryText);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--deepGold);
+  margin-top: 2px;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 22px;
+  right: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--deepGold);
+  opacity: 0.7;
+  will-change: transform;
+}
+
+.card:hover .arrow {
+  opacity: 1;
+}
+
+.goldAccent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 1px;
+}
+
+@media (max-width: 1024px) {
+  .grid { gap: 20px; }
+}
+
+@media (max-width: 768px) {
+  .container { width: min(1280px, calc(100% - 40px)); }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .headerDesc { max-width: none; }
+  .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px;
+  }
+  .card { height: 300px; }
+  .card.active { max-height: 320px; }
+}
+
+@media (max-width: 600px) {
+  .section { padding: 80px 0; }
+  .grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+  .card { height: auto; min-height: 260px; }
+  .card.active { max-height: none; }
+  .card:hover { transform: translateY(-4px); }
+}

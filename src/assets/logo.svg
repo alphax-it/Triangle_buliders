@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 60" fill="none">
+  <!-- Triangle icon -->
+  <polygon points="8,50 28,10 48,50" stroke="#1A1A1A" stroke-width="2.5" fill="none"/>
+  <polygon points="16,50 28,22 40,50" fill="#C4282B"/>
+  <!-- TRIANGLE text -->
+  <text x="58" y="30" font-family="'Playfair Display', Georgia, serif" font-size="26" font-weight="700" fill="#1A1A1A" letter-spacing="2">TRIANGLE</text>
+  <!-- BUILDERS text -->
+  <text x="58" y="48" font-family="'Inter', Arial, sans-serif" font-size="14" font-weight="600" fill="#D4A934" letter-spacing="6">BUILDERS</text>
+</svg>
