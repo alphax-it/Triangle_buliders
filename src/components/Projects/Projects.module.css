@@ -1,5 +1,5 @@
 .projects {
-  padding: 110px 0;
+  padding: 40px 0;
 }
 
 .container {
@@ -208,6 +208,7 @@
 }
 
 @media (max-width: 768px) {
+  .projects { padding: 30px 0; }
   .container { width: min(1280px, calc(100% - 40px)); }
   .card { flex: 0 0 calc(33.333% - 11px); min-width: 150px; }
 }
