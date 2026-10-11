@@ -56,6 +56,15 @@
   margin-bottom: 4px;
 }
 
+.statInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  min-width: 0;
+}
+
 .value {
   font-family: var(--font-heading);
   font-size: clamp(40px, 4vw, 52px);
@@ -85,11 +94,58 @@
 }
 
 @media (max-width: 640px) {
+  .stats {
+    width: min(1280px, calc(100% - 32px));
+    margin-top: -40px;
+  }
   .panel {
     grid-template-columns: 1fr;
     gap: 20px;
-    max-width: 340px;
+    max-width: 360px;
+    padding: 24px 20px;
   }
   .stat::after { display: none !important; }
-  .stat { flex-direction: row; gap: 14px; text-align: left; justify-content: flex-start; }
+  .stat {
+    flex-direction: row;
+    gap: 16px;
+    text-align: left;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .iconBox {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+  .statInfo {
+    align-items: flex-start;
+    text-align: left;
+    gap: 2px;
+    flex: 1;
+  }
+  .value {
+    font-size: clamp(28px, 6.5vw, 36px);
+    line-height: 1.1;
+  }
+  .label {
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 360px) {
+  .panel {
+    padding: 20px 16px;
+    gap: 16px;
+  }
+  .stat {
+    gap: 12px;
+  }
+  .value {
+    font-size: 26px;
+  }
+  .label {
+    font-size: 10px;
+    letter-spacing: 0.04em;
+  }
 }

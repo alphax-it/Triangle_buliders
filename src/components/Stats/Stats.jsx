@@ -30,8 +30,10 @@ function StatItem({ stat, index }) {
       <div className={styles.iconBox}>
         <Icon size={22} strokeWidth={1.4} />
       </div>
-      <div className={styles.value}>{stat.prefix || ''}{display}{stat.suffix}</div>
-      <div className={styles.label}>{stat.label}</div>
+      <div className={styles.statInfo}>
+        <div className={styles.value}>{stat.prefix || ''}{display}{stat.suffix}</div>
+        <div className={styles.label}>{stat.label}</div>
+      </div>
     </motion.div>
   );
 }
