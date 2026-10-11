@@ -12,9 +12,26 @@ export default function Projects() {
   const [active, setActive] = useState(2);
   const [headerRef, headerInView] = useInView({ threshold: 0.2 });
   const carouselRef = useRef(null);
+  const cardRefs = useRef([]);
 
   const prev = () => setActive((p) => (p === 0 ? projects.length - 1 : p - 1));
   const next = () => setActive((p) => (p === projects.length - 1 ? 0 : p + 1));
+
+  // center active card in carousel view
+  useEffect(() => {
+    const cardEl = cardRefs.current[active];
+    const container = carouselRef.current;
+    if (cardEl && container) {
+      const cardLeft = cardEl.offsetLeft;
+      const cardWidth = cardEl.offsetWidth;
+      const containerWidth = container.clientWidth;
+      const targetScroll = cardLeft - (containerWidth / 2) + (cardWidth / 2);
+      container.scrollTo({
+        left: Math.max(0, targetScroll),
+        behavior: 'smooth'
+      });
+    }
+  }, [active]);
 
   // keyboard navigation
   useEffect(() => {
@@ -22,9 +39,6 @@ export default function Projects() {
       if (e.key === 'ArrowLeft') prev();
       if (e.key === 'ArrowRight') next();
     };
-    const el = carouselRef.current;
-    if (!el) return;
-    // only when carousel is in viewport, listen?
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, []);
@@ -74,6 +88,7 @@ export default function Projects() {
             return (
               <motion.div
                 key={i}
+                ref={(el) => (cardRefs.current[i] = el)}
                 className={`${styles.card} ${isActive ? styles.activeCard : ''}`}
                 animate={{
                   scale: isActive ? 1.02 : 0.95,
@@ -84,20 +99,39 @@ export default function Projects() {
                 whileHover={{ y: isActive ? -4 : -2 }}
               >
                 <div className={styles.yearBadge}>{project.year}</div>
-                <div className={styles.visual}>
-                  <motion.img
-                    src={buildingImg}
-                    alt={`Project ${project.year}`}
-                    className={styles.projectImg}
-                    animate={{ scale: isActive ? 1.03 : 1 }}
-                    transition={{ duration: 0.5, ease: EASE }}
-                    whileHover={{ scale: 1.04 }}
-                  />
-                  <div className={styles.overlay} />
-                </div>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.visualLink}
+                  aria-label={`View photos for ${project.title || `Project ${project.year}`}`}
+                  onClick={(e) => {
+                    if (!isActive) {
+                      e.preventDefault();
+                      setActive(i);
+                    }
+                  }}
+                >
+                  <div className={styles.visual}>
+                    <motion.img
+                      src={project.image || buildingImg}
+                      alt={project.title || `Project ${project.year}`}
+                      className={styles.projectImg}
+                      animate={{ scale: isActive ? 1.03 : 1 }}
+                      transition={{ duration: 0.5, ease: EASE }}
+                      whileHover={{ scale: 1.04 }}
+                      loading="lazy"
+                      onError={(e) => {
+                        e.currentTarget.src = buildingImg;
+                      }}
+                    />
+                    <div className={styles.overlay}>
+                      <span className={styles.viewBadge}>Photos ↗</span>
+                    </div>
+                  </div>
+                </a>
                 <div className={styles.cardInfo}>
                   <span className={styles.area}>{project.area}</span>
-                  <span className={styles.value}>{project.value}</span>
                 </div>
               </motion.div>
             );

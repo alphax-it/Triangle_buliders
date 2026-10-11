@@ -48,12 +48,78 @@ export const services = [
 ];
 
 export const projects = [
-  { year: 2021, area: '4,150 SQ.FT', value: '₹ 0.604 Cr', progress: 18 },
-  { year: 2022, area: '7,660 SQ.FT', value: '₹ 1.403 Cr', progress: 32 },
-  { year: 2023, area: '11,210 SQ.FT', value: '₹ 1.984 Cr', progress: 48 },
-  { year: 2024, area: '16,837 SQ.FT', value: '₹ 3.177 Cr', progress: 70 },
-  { year: 2025, area: '23,877 SQ.FT', value: '₹ 3.448 Cr', progress: 88 },
-  { year: 2026, area: '9,291 SQ.FT', value: '₹ 2.063 Cr', progress: 42 },
+  {
+    year: 2021,
+    area: '4,150 SQ.FT',
+    value: '₹ 0.604 Cr',
+    progress: 18,
+    title: 'Nallasamy - Kovilvazhli',
+    image: '/projects/project-1.jpg',
+    link: 'https://photos.app.goo.gl/GNduhtkqCv3TjE8k8'
+  },
+  {
+    year: 2022,
+    area: '7,660 SQ.FT',
+    value: '₹ 1.403 Cr',
+    progress: 32,
+    title: 'Kumar - Electrician',
+    image: '/projects/project-2.jpg',
+    link: 'https://photos.app.goo.gl/5MPzV8By84uEHBed8'
+  },
+  {
+    year: 2023,
+    area: '11,210 SQ.FT',
+    value: '₹ 1.984 Cr',
+    progress: 48,
+    title: 'Ragu - Theni',
+    image: '/projects/project-3.jpg',
+    link: 'https://photos.app.goo.gl/QVoUP6ghP861S7po8'
+  },
+  {
+    year: 2024,
+    area: '16,837 SQ.FT',
+    value: '₹ 3.177 Cr',
+    progress: 70,
+    title: 'Sakthiselvan - Vellanapatti',
+    image: '/projects/project-4.jpg',
+    link: 'https://photos.app.goo.gl/WMHaSxePvsLmZURd9'
+  },
+  {
+    year: 2025,
+    area: '23,877 SQ.FT',
+    value: '₹ 3.448 Cr',
+    progress: 88,
+    title: 'Sivaneshan - Karuvamplayam',
+    image: '/projects/project-5.jpg',
+    link: 'https://photos.app.goo.gl/jitLcWNJBGEEQP716'
+  },
+  {
+    year: 2026,
+    area: '9,291 SQ.FT',
+    value: '₹ 2.063 Cr',
+    progress: 42,
+    title: 'Vignesh - Thoravalur',
+    image: '/projects/project-6.jpg',
+    link: 'https://photos.app.goo.gl/Ax7f4ugzHdg1NFvi7'
+  },
+  {
+    year: 2026,
+    area: '15,400 SQ.FT',
+    value: '₹ 2.950 Cr',
+    progress: 65,
+    title: 'VKN - Appartment',
+    image: '/projects/project-7.jpg',
+    link: 'https://photos.app.goo.gl/4tBrsF2wUfQHjimS9'
+  },
+  {
+    year: 2026,
+    area: '8,250 SQ.FT',
+    value: '₹ 1.720 Cr',
+    progress: 30,
+    title: 'Divya - Kanakampalayam',
+    image: '/projects/project-8.jpg',
+    link: 'https://photos.app.goo.gl/PZETTGKzEZu887jE7'
+  },
 ];
 
 import { Shield, Clock, Users, CheckCircle } from 'lucide-react';

@@ -131,28 +131,55 @@
   pointer-events: none;
 }
 
-.card:hover .overlay {
+.visualLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.viewBadge {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  padding: 4px 10px;
+  background: rgba(23, 23, 23, 0.82);
+  backdrop-filter: blur(4px);
+  color: var(--softYellow);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: 6px;
+  border: 1px solid rgba(244, 185, 0, 0.45);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: all 0.25s ease;
+  pointer-events: none;
+}
+
+.card:hover .viewBadge {
   opacity: 1;
+  transform: translateY(0);
 }
 
 .cardInfo {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  padding: 14px 16px;
+  padding: 12px 16px;
   border-top: 1px solid rgba(233, 221, 187, 0.25);
 }
 
 .area {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--secondaryText);
-}
-
-.value {
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--gold);
+  letter-spacing: 0.03em;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+
+.activeCard .area {
+  color: var(--deepGold);
 }
 
 .dots {
