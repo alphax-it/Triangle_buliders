@@ -97,7 +97,7 @@ export default function Navbar() {
         </motion.a>
 
         <button className={styles.burger} onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
-          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
