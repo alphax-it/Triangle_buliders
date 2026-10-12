@@ -11,6 +11,7 @@ const iconMap = [BuildingContractorIcon, ConsultingEngineerIcon, InteriorElevati
 
 export default function Services() {
   const [active, setActive] = useState(null);
+  const [hovered, setHovered] = useState(null);
   const [headerRef, headerInView] = useInView({ threshold: 0.2 });
   const [gridRef, gridInView] = useInView({ threshold: 0.1 });
 
@@ -45,25 +46,40 @@ export default function Services() {
           {services.map((s, i) => {
             const Icon = iconMap[i];
             const isActive = active === i;
+            const isHover = hovered === i;
             return (
               <motion.div
                 key={s.id}
-                className={`${styles.card} ${isActive ? styles.cardActive : ''}`}
+                className={styles.cardWrapper}
                 initial={{ opacity: 0, y: 24 }}
                 animate={gridInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.55, delay: i * 0.07, ease: EASE }}
-                onClick={() => setActive((prev) => (prev === i ? null : i))}
               >
-                <div className={styles.cardIcon}>
-                  <Icon isHovered={isActive} />
+                <div
+                  className={`${styles.card} ${isActive ? styles.cardActive : ''}`}
+                  onClick={() => setActive((prev) => (prev === i ? null : i))}
+                  onMouseEnter={() => setHovered(i)}
+                  onMouseLeave={() => setHovered(null)}
+                >
+                  {/* Uiverse rising color bubble */}
+                  <div className={styles.hoverBubble} />
+
+                  <div className={styles.cardTop}>
+                    <div className={styles.cardIcon}>
+                      <Icon isHovered={isActive || isHover} />
+                    </div>
+                    <span className={styles.cardNum}>{s.id}</span>
+                  </div>
+
+                  <h3 className={styles.cardTitle}>{s.title}</h3>
+                  <p className={styles.cardDesc}>{s.description}</p>
+
+                  <div className={styles.cardBottom}>
+                    <span className={styles.cardArrow}>
+                      <ArrowRight size={16} strokeWidth={2} />
+                    </span>
+                  </div>
                 </div>
-                <span className={styles.cardNum}>{s.id}</span>
-                <h3 className={styles.cardTitle}>{s.title}</h3>
-                <p className={styles.cardDesc}>{s.description}</p>
-                <span className={styles.cardArrow}>
-                  <ArrowRight size={15} strokeWidth={2} />
-                </span>
-                <div className={styles.cardAccent} />
               </motion.div>
             );
           })}

@@ -1,5 +1,5 @@
 .section {
-  padding: 40px 0 80px;
+  padding: 30px 0 50px;
   background: var(--cream);
   position: relative;
 }
@@ -13,8 +13,8 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 48px;
-  margin-bottom: 56px;
+  gap: 40px;
+  margin-bottom: 36px;
 }
 
 .headerLeft {
@@ -28,15 +28,15 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--deepGold);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .heading {
   font-family: var(--font-heading);
-  font-size: clamp(48px, 5vw, 76px);
+  font-size: clamp(42px, 4.5vw, 68px);
   font-weight: 800;
   letter-spacing: -0.04em;
-  line-height: 0.9;
+  line-height: 0.95;
   color: var(--text);
 }
 
@@ -45,7 +45,7 @@
 .headerDesc {
   font-family: var(--font-body);
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.65;
   color: var(--secondaryText);
   max-width: 420px;
   flex-shrink: 0;
@@ -53,31 +53,32 @@
 
 .grid {
   display: grid;
-  gap: 24px;
-  align-items: start;
-  transition: grid-template-columns 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  gap: 20px;
+  align-items: stretch;
+  transition: grid-template-columns 0.55s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card {
   background: var(--cream);
   border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 28px;
+  border-radius: 20px;
+  padding: 22px 20px 20px;
   display: flex;
   flex-direction: column;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  height: 300px;
+  min-height: 235px;
+  height: 100%;
   transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
   min-width: 0;
 }
 
 .card.active {
-  height: auto;
-  min-height: 300px;
-  max-height: 330px;
+  background: #FFFEF5;
+  border-color: var(--gold);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
 }
 
 .card:hover {
@@ -88,15 +89,15 @@
 .card.active {
   background: #FFFEF5;
   border-color: var(--gold);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
 }
 
 .iconBox {
-  width: 50px;
-  height: 50px;
+  width: 46px;
+  height: 46px;
   border: 1px solid var(--border);
   background: var(--cream);
-  border-radius: 14px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,11 +107,11 @@
 
 .num {
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 700;
   letter-spacing: 0.06em;
   color: var(--deepGold);
-  margin-top: 18px;
+  margin-top: 14px;
 }
 
 .title {
@@ -119,7 +120,7 @@
   font-weight: 800;
   letter-spacing: 0.05em;
   color: var(--text);
-  margin-top: 10px;
+  margin-top: 8px;
   transition: color 0.3s ease;
 }
 
@@ -130,26 +131,26 @@
 
 .desc {
   font-family: var(--font-body);
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 13.5px;
+  line-height: 1.55;
   color: var(--secondaryText);
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .expanded {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   margin-top: 4px;
-  padding-top: 14px;
+  padding-top: 12px;
   border-top: 1px dashed rgba(233, 221, 187, 0.6);
 }
 
 .expandedText {
   font-family: var(--font-body);
-  font-size: 14px;
-  line-height: 1.65;
+  font-size: 13.5px;
+  line-height: 1.6;
   color: var(--secondaryText);
 }
 
@@ -167,8 +168,8 @@
 
 .arrow {
   position: absolute;
-  bottom: 22px;
-  right: 24px;
+  bottom: 18px;
+  right: 18px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -207,10 +208,9 @@
   .headerDesc { max-width: none; }
   .grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 20px;
+    gap: 16px;
   }
-  .card { height: 300px; }
-  .card.active { max-height: 320px; }
+  .card { min-height: 235px; height: 100%; }
 }
 
 @media (max-width: 600px) {

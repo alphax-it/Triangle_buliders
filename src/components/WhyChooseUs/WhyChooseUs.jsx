@@ -63,17 +63,20 @@ function BenefitItem({ benefit, index, color, inView }) {
   const Icon = benefit.icon;
   return (
     <motion.div
-      className={styles.benefit}
+      className={styles.benefitWrapper}
       initial={{ opacity: 0, y: 25 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.55, delay: index * 0.07, ease: EASE }}
-      whileHover={{ y: -4 }}
     >
-      <motion.div className={styles.iconCircle} style={{ background: `${color}18`, color }} whileHover={{ scale: 1.05 }} transition={{ duration: 0.25 }}>
-        <Icon size={24} strokeWidth={1.5} />
-      </motion.div>
-      <h4 className={styles.benefitTitle}>{benefit.title}</h4>
-      <p className={styles.benefitDesc}>{benefit.description}</p>
+      <div className={styles.benefit}>
+        <div className={styles.benefitContent}>
+          <div className={styles.iconCircle} style={{ background: `${color}18`, color }}>
+            <Icon size={26} strokeWidth={1.6} />
+          </div>
+          <h4 className={styles.benefitTitle}>{benefit.title}</h4>
+          <p className={styles.benefitDesc}>{benefit.description}</p>
+        </div>
+      </div>
     </motion.div>
   );
 }

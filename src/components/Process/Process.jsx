@@ -69,6 +69,7 @@ export default function Process() {
           ref={gridRef}
           className={styles.grid}
           style={{ gridTemplateColumns: getGridTemplate() }}
+          onMouseLeave={() => isDesktop && setActive(null)}
         >
           {processSteps.map((step, i) => {
             const isActive = active === i;
@@ -79,6 +80,7 @@ export default function Process() {
                 index={i}
                 inView={gridInView}
                 isActive={isActive}
+                onMouseEnter={() => isDesktop && setActive(i)}
                 onToggle={() => toggle(i)}
                 expandedText={expandedTexts[i]}
               />
@@ -90,18 +92,25 @@ export default function Process() {
   );
 }
 
-function Step({ step, index, inView, isActive, onToggle, expandedText }) {
+function Step({ step, index, inView, isActive, onToggle, onMouseEnter, expandedText }) {
   const Icon = iconMap[index];
   const [hovered, setHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setHovered(true);
+    onMouseEnter?.();
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(false);
+  };
 
   return (
     <motion.div
       className={`${styles.card} ${isActive ? styles.active : ''}`}
       onClick={onToggle}
-      onHoverStart={() => setHovered(true)}
-      onHoverEnd={() => setHovered(false)}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       initial={{ opacity: 0, y: 25 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.12, ease: EASE }}
