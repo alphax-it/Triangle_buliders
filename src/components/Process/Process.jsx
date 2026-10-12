@@ -128,38 +128,44 @@ function Step({ step, index, inView, isActive, onToggle, onMouseEnter, expandedT
 
       <div className={styles.num}>{step.id}</div>
       <h3 className={styles.title}>{step.title}</h3>
-      <p className={styles.desc}>{step.description}</p>
+
+      <div className={styles.descWrap}>
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.p
+            key={isActive ? 'expanded' : 'short'}
+            className={styles.desc}
+            initial={{ opacity: 0, y: 3 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -3 }}
+            transition={{ duration: 0.25, ease: EASE }}
+          >
+            {isActive ? expandedText : step.description}
+          </motion.p>
+        </AnimatePresence>
+      </div>
 
       <AnimatePresence initial={false}>
         {isActive && (
           <motion.div
-            key="expanded"
-            className={styles.expanded}
-            initial={{ opacity: 0, y: 10, height: 0 }}
-            animate={{ opacity: 1, y: 0, height: 'auto' }}
-            exit={{ opacity: 0, y: 6, height: 0 }}
-            transition={{ duration: 0.45, ease: EASE }}
+            key="cta"
+            className={styles.ctaWrap}
+            initial={{ opacity: 0, x: -6 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, delay: 0.1, ease: EASE }}
           >
-            <p className={styles.expandedText}>{expandedText}</p>
-            <motion.span
-              className={styles.cta}
-              initial={{ opacity: 0, x: -6 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.35, delay: 0.2, ease: EASE }}
-            >
+            <span className={styles.cta}>
               START YOUR PROJECT <ArrowRight size={14} strokeWidth={2} />
-            </motion.span>
+            </span>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <motion.span
-        className={styles.arrow}
-        animate={hovered ? { x: 4 } : { x: 0 }}
-        transition={{ duration: 0.25, ease: EASE }}
-      >
-        <ArrowRight size={16} strokeWidth={1.8} />
-      </motion.span>
+      {!isActive && (
+        <span className={styles.arrow}>
+          <ArrowRight size={16} strokeWidth={1.8} />
+        </span>
+      )}
 
       <motion.div
         className={styles.goldAccent}
