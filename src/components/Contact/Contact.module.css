@@ -173,6 +173,45 @@
   line-height: 1.5;
 }
 
+.infoLink {
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color 0.25s ease;
+  display: inline-block;
+}
+
+.infoLink:hover {
+  color: var(--deepGold);
+  text-decoration: underline;
+}
+
+.phoneLinks {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.divider {
+  color: var(--border);
+  font-size: 0.85rem;
+}
+
+.infoSubtext {
+  font-size: 0.78rem;
+  color: var(--secondaryText);
+  margin-top: 3px;
+}
+
+.mapContainer {
+  margin-top: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
 @media (max-width: 768px) {
   .container { width: min(1280px, calc(100% - 40px)); }
   .grid { grid-template-columns: 1fr; }

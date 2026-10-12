@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { motion, useMotionValue, useSpring, useReducedMotion } from 'framer-motion';
 import { ArrowRight, Mouse } from 'lucide-react';
-import buildingImg from '../../assets/building.png';
 import styles from './Hero.module.css';
 
 const EASE = [0.16, 1, 0.3, 1];
@@ -87,8 +86,8 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.48, ease: EASE }}
             >
-              From concept to creation, we build world-class spaces with quality,
-              on-time delivery and trust.
+              Leading building contractors and civil engineering consultants in Tiruppur.
+              From concept to turnkey construction, we build premium residential and commercial spaces with quality and trust.
             </motion.p>
 
             <motion.div
@@ -142,11 +141,15 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.35, ease: EASE }}
             >
               <motion.img
-                src={buildingImg}
-                alt="Triangle Builders modern luxury villa"
+                src="/buliding.png"
+                alt="Architectural building design by Triangle Builders"
                 className={styles.heroImg}
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.5, ease: EASE }}
+                width="720"
+                height="480"
+                loading="eager"
+                fetchPriority="high"
               />
             </motion.div>
           </motion.div>

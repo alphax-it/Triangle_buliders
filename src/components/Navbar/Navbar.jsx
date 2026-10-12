@@ -53,8 +53,9 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -5 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.05, ease: NAV_EASE }}
+          aria-label="Triangle Builders - Home"
         >
-          <img src={logo} alt="Triangle Builders" />
+          <img src={logo} alt="Triangle Builders construction company logo" width="160" height="48" />
         </motion.a>
 
         <motion.nav

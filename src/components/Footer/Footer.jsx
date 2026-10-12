@@ -21,10 +21,10 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.top}>
           <div className={styles.brand}>
-            <img src={logo} alt="Triangle Builders" className={styles.logo} />
+            <img src={logo} alt="Triangle Builders construction company logo" width="160" height="48" className={styles.logo} />
             <p className={styles.brandText}>
-              Building premium spaces with trust, quality craftsmanship, and
-              on-time delivery since 2005.
+              Premier building contractors and civil engineering consultants based in Tiruppur.
+              Quality craftsmanship, transparent documentation, and on-time delivery.
             </p>
             <a href="#contact" className={styles.ctaBtn} onClick={(e) => handleNav(e, '#contact')}>
               GET A QUOTE <ArrowRight size={13} strokeWidth={2} />
@@ -41,19 +41,29 @@ export default function Footer() {
           </div>
 
           <div className={styles.linksCol}>
-            <h4 className={styles.colTitle}>Services</h4>
-            <span className={styles.footerLink}>Residential Construction</span>
-            <span className={styles.footerLink}>Commercial Projects</span>
-            <span className={styles.footerLink}>Interior Design</span>
-            <span className={styles.footerLink}>Renovation</span>
-            <span className={styles.footerLink}>Construction Consulting</span>
+            <h4 className={styles.colTitle}>Our Services</h4>
+            <a href="#services" className={styles.footerLink} onClick={(e) => handleNav(e, '#services')}>Building Contractor</a>
+            <a href="#services" className={styles.footerLink} onClick={(e) => handleNav(e, '#services')}>Consulting Engineer</a>
+            <a href="#services" className={styles.footerLink} onClick={(e) => handleNav(e, '#services')}>Interior / Elevation Work</a>
+            <a href="#services" className={styles.footerLink} onClick={(e) => handleNav(e, '#services')}>Renovation &amp; Remodeling</a>
+            <a href="#services" className={styles.footerLink} onClick={(e) => handleNav(e, '#services')}>Corporation / Panchayat Approval</a>
+            <a href="#loan" className={styles.footerLink} onClick={(e) => handleNav(e, '#loan')}>Bank Loan Assistance</a>
           </div>
 
           <div className={styles.linksCol}>
-            <h4 className={styles.colTitle}>Contact Info</h4>
-            {contactInfo.map((info, i) => (
-              <span key={i} className={styles.footerLink}>{info.value}</span>
-            ))}
+            <h4 className={styles.colTitle}>Contact Us</h4>
+            <a
+              href="https://maps.google.com/?q=Triangle+Builders,+Silver+Complex,+Sulthan+Pettai,+Mangalam+Road,+Tiruppur+641687"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.footerLink}
+            >
+              5 - FF, Silver Complex, Sulthan Pettai, Mangalam Road, Tiruppur – 641687
+            </a>
+            <a href="tel:+917530074011" className={styles.footerLink}>+91 75300 74011</a>
+            <a href="tel:+917530074033" className={styles.footerLink}>+91 75300 74033</a>
+            <a href="mailto:trianglebuilders.tp@gmail.com" className={styles.footerLink}>trianglebuilders.tp@gmail.com</a>
+            <span className={styles.footerLink}>GSTIN: 33AAVFT5396H1ZG</span>
           </div>
         </div>
 

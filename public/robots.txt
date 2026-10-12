@@ -1,0 +1,8 @@
+# Robots.txt for Triangle Builders
+# Production domain: https://triangle-builders.vercel.app/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://triangle-builders.vercel.app/sitemap.xml

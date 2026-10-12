@@ -8,6 +8,7 @@ import Projects from './components/Projects/Projects';
 import WhyChooseUs from './components/WhyChooseUs/WhyChooseUs';
 import Process from './components/Process/Process';
 import LoanSupport from './components/LoanSupport/LoanSupport';
+import Faq from './components/Faq/Faq';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import ScrollProgress from './components/shared/ScrollProgress';
@@ -26,6 +27,7 @@ export default function App() {
         <WhyChooseUs />
         <Process />
         <LoanSupport />
+        <Faq />
         <Contact />
       </main>
       <Footer />

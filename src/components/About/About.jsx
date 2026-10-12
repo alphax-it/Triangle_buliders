@@ -1,10 +1,32 @@
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Compass, HardHat, ShieldCheck, Award } from 'lucide-react';
 import { useInView } from '../../hooks/useInView';
-import buildingImg from '../../assets/building.png';
 import styles from './About.module.css';
 
 const EASE = [0.16, 1, 0.3, 1];
+
+const pillars = [
+  {
+    icon: Compass,
+    title: 'Architectural Precision',
+    desc: 'Tailored designs crafted with structural excellence and modern aesthetics.'
+  },
+  {
+    icon: HardHat,
+    title: 'Expert Execution',
+    desc: 'Skilled on-site engineers ensuring flawless craftsmanship at every stage.'
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Certified Quality',
+    desc: 'Top-tier materials and rigorous quality control from foundation to finish.'
+  },
+  {
+    icon: Award,
+    title: 'On-Time Delivery',
+    desc: 'Disciplined project schedules and transparent milestone tracking.'
+  }
+];
 
 export default function About() {
   const [ref, inView] = useInView({ threshold: 0.2 });
@@ -55,18 +77,28 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            className={styles.visual}
-            initial={{ opacity: 0, scale: 0.97, clipPath: 'inset(0 100% 0 0)' }}
-            animate={inView ? { opacity: 1, scale: 1, clipPath: 'inset(0 0% 0 0)' } : {}}
-            transition={{ duration: 0.9, delay: 0.15, ease: EASE }}
+            className={styles.pillarsGrid}
+            initial={{ opacity: 0, y: 25 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.2, ease: EASE }}
           >
-            <motion.img
-              src={buildingImg}
-              alt="Triangle Builders project"
-              className={styles.aboutImg}
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.5, ease: EASE }}
-            />
+            {pillars.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={index}
+                  className={styles.pillarCard}
+                  whileHover={{ y: -4 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  <div className={styles.pillarIconBox}>
+                    <Icon size={22} strokeWidth={1.8} />
+                  </div>
+                  <h3 className={styles.pillarTitle}>{item.title}</h3>
+                  <p className={styles.pillarDesc}>{item.desc}</p>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </div>

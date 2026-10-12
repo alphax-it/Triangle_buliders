@@ -149,34 +149,20 @@
   min-width: 0;
 }
 
-.visual::before {
-  content: "";
-  position: absolute;
-  width: 440px;
-  height: 440px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(244, 185, 0, 0.22) 0%, rgba(248, 214, 109, 0.08) 55%, transparent 75%);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 0;
-  filter: blur(28px);
-}
-
 .imgWrap {
   width: 100%;
-  max-width: 620px;
-  position: relative;
-  z-index: 1;
+  max-width: 580px;
+  overflow: hidden;
+  border-radius: 20px;
 }
 
 .heroImg {
   width: 100%;
   height: auto;
-  object-fit: contain;
+  display: block;
+  object-fit: cover;
+  border-radius: 20px;
   will-change: transform;
-  filter: drop-shadow(0 24px 35px rgba(0, 0, 0, 0.12)) drop-shadow(0 6px 12px rgba(217, 154, 0, 0.08));
 }
 
 .btnArrow {

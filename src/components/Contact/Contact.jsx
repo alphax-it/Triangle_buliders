@@ -50,24 +50,64 @@ function InfoPanel() {
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.6, ease: EASE }}
     >
-      {contactInfo.map((info, i) => {
-        const Icon = iconMap[i % iconMap.length];
-        return (
-          <motion.div
-            key={i}
-            className={styles.infoItem}
-            initial={{ opacity: 0, y: 12 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.15 + i * 0.06, ease: EASE }}
+      <div className={styles.infoItem}>
+        <div className={styles.infoIcon}><MapPin size={18} strokeWidth={1.8} /></div>
+        <div>
+          <h4 className={styles.infoLabel}>Office Address</h4>
+          <a
+            href="https://maps.google.com/?q=Triangle+Builders,+Silver+Complex,+Sulthan+Pettai,+Mangalam+Road,+Tiruppur+641687"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.infoLink}
           >
-            <div className={styles.infoIcon}><Icon size={16} strokeWidth={1.5} /></div>
-            <div>
-              <h4 className={styles.infoLabel}>{info.label}</h4>
-              <p className={styles.infoValue}>{info.value}</p>
-            </div>
-          </motion.div>
-        );
-      })}
+            5 - FF, Silver Complex, Sulthan Pettai, Mangalam Road, Tiruppur – 641687, Tamil Nadu
+          </a>
+        </div>
+      </div>
+
+      <div className={styles.infoItem}>
+        <div className={styles.infoIcon}><Phone size={18} strokeWidth={1.8} /></div>
+        <div>
+          <h4 className={styles.infoLabel}>Call Us (Click to Dial)</h4>
+          <div className={styles.phoneLinks}>
+            <a href="tel:+917530074011" className={styles.infoLink}>+91 75300 74011</a>
+            <span className={styles.divider}>/</span>
+            <a href="tel:+917530074033" className={styles.infoLink}>+91 75300 74033</a>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.infoItem}>
+        <div className={styles.infoIcon}><Mail size={18} strokeWidth={1.8} /></div>
+        <div>
+          <h4 className={styles.infoLabel}>Email Address</h4>
+          <a href="mailto:trianglebuilders.tp@gmail.com" className={styles.infoLink}>
+            trianglebuilders.tp@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <div className={styles.infoItem}>
+        <div className={styles.infoIcon}><Clock size={18} strokeWidth={1.8} /></div>
+        <div>
+          <h4 className={styles.infoLabel}>Business Information</h4>
+          <p className={styles.infoValue}>GSTIN: 33AAVFT5396H1ZG</p>
+          <p className={styles.infoSubtext}>Serving Tiruppur &amp; Surrounding Regions</p>
+        </div>
+      </div>
+
+      <div className={styles.mapContainer}>
+        <iframe
+          title="Triangle Builders office location on Mangalam Road, Tiruppur"
+          src="https://maps.google.com/maps?q=Silver+Complex,+Sulthan+Pettai,+Mangalam+Road,+Tiruppur+641687&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="150"
+          style={{ border: 0, borderRadius: '10px' }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </div>
     </motion.div>
   );
 }

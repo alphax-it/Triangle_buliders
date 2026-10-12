@@ -32,10 +32,9 @@ export default function LoanSupport() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2, ease: EASE }}
           >
-            <h2 className={styles.heading}>LOAN & APPROVAL SUPPORT</h2>
+            <h2 className={styles.heading}>LOAN &amp; APPROVAL SUPPORT</h2>
             <p className={styles.text}>
-              We assist you with home loan approvals and all regulatory
-              documentation to make your journey smooth.
+              We assist you with Tiruppur Corporation &amp; Panchayat building approvals, civil engineer valuations, and seamless construction loan documentation.
             </p>
           </motion.div>
           <motion.a

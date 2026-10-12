@@ -115,12 +115,14 @@ export default function Projects() {
                   <div className={styles.visual}>
                     <motion.img
                       src={project.image || buildingImg}
-                      alt={project.title || `Project ${project.year}`}
+                      alt={project.title ? `${project.title} - Construction project by Triangle Builders in Tiruppur` : `Construction project ${project.year} by Triangle Builders`}
                       className={styles.projectImg}
                       animate={{ scale: isActive ? 1.03 : 1 }}
                       transition={{ duration: 0.5, ease: EASE }}
                       whileHover={{ scale: 1.04 }}
                       loading="lazy"
+                      width="500"
+                      height="320"
                       onError={(e) => {
                         e.currentTarget.src = buildingImg;
                       }}

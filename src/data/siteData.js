@@ -18,32 +18,32 @@ export const services = [
   {
     id: '01',
     title: 'Building Contractor',
-    description: 'Complete construction management from foundation to finishing with uncompromising quality standards.',
+    description: 'Turnkey residential and commercial building construction in Tiruppur. From foundation to finishing, we deliver independent houses and world-class commercial spaces.',
   },
   {
     id: '02',
     title: 'Consulting Engineer',
-    description: 'Expert structural and engineering consultation to optimize your project\'s design and performance.',
+    description: 'Professional civil and structural engineering consultancy in Tiruppur. Expert architectural building planning, structural stability analysis, and detailed drafting.',
   },
   {
     id: '03',
     title: 'Interior / Elevation Work',
-    description: 'Bespoke interior design and stunning elevation work that transforms spaces into architectural statements.',
+    description: 'Modern house elevation designs and bespoke interior works in Tiruppur. Transform spaces with eye-catching exterior facades and elegant interior styling.',
   },
   {
     id: '04',
     title: 'Renovation',
-    description: 'Transform existing structures with modern upgrades, restoring beauty and enhancing functionality.',
+    description: 'Complete house renovation and building remodeling in Tiruppur. Structural upgrades, modern space reconfigurations, and older home extensions with lasting durability.',
   },
   {
     id: '05',
     title: 'Corporation / Panchayat Approval',
-    description: 'Hassle-free navigation of approval processes with complete documentation and compliance support.',
+    description: 'Hassle-free Tiruppur Municipal Corporation and Panchayat building plan approval assistance with complete documentation and regulatory guidance.',
   },
   {
     id: '06',
     title: 'Bank Loan Assistance',
-    description: 'Streamlined loan processing assistance to secure the best financing for your construction project.',
+    description: 'Construction loan assistance and housing finance guidance in Tiruppur. We provide detailed estimates, stage-wise valuation reports, and documentation support.',
   },
 ];
 
