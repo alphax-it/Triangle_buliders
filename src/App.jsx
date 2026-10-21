@@ -12,6 +12,7 @@ import Faq from './components/Faq/Faq';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import ScrollProgress from './components/shared/ScrollProgress';
+import FloatingWhatsApp from './components/shared/FloatingWhatsApp';
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </MotionConfig>
   );
 }

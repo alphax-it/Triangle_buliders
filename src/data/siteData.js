@@ -50,6 +50,8 @@ export const services = [
 export const projects = [
   {
     year: 2021,
+    name: 'Nallasamy',
+    location: 'Kovilvazhli',
     area: '4,150 SQ.FT',
     value: '₹ 0.604 Cr',
     progress: 18,
@@ -59,6 +61,8 @@ export const projects = [
   },
   {
     year: 2022,
+    name: 'Kumar',
+    location: 'Tiruppur',
     area: '7,660 SQ.FT',
     value: '₹ 1.403 Cr',
     progress: 32,
@@ -68,6 +72,8 @@ export const projects = [
   },
   {
     year: 2023,
+    name: 'Ragu',
+    location: 'Theni',
     area: '11,210 SQ.FT',
     value: '₹ 1.984 Cr',
     progress: 48,
@@ -77,6 +83,8 @@ export const projects = [
   },
   {
     year: 2024,
+    name: 'Sakthiselvan',
+    location: 'Vellanapatti',
     area: '16,837 SQ.FT',
     value: '₹ 3.177 Cr',
     progress: 70,
@@ -86,6 +94,8 @@ export const projects = [
   },
   {
     year: 2025,
+    name: 'Sivaneshan',
+    location: 'Karuvampalayam',
     area: '23,877 SQ.FT',
     value: '₹ 3.448 Cr',
     progress: 88,
@@ -95,6 +105,8 @@ export const projects = [
   },
   {
     year: 2026,
+    name: 'Vignesh',
+    location: 'Thoravalur',
     area: '9,291 SQ.FT',
     value: '₹ 2.063 Cr',
     progress: 42,
@@ -104,6 +116,8 @@ export const projects = [
   },
   {
     year: 2026,
+    name: 'VKN',
+    location: 'Tiruppur',
     area: '15,400 SQ.FT',
     value: '₹ 2.950 Cr',
     progress: 65,
@@ -113,6 +127,8 @@ export const projects = [
   },
   {
     year: 2026,
+    name: 'Divya',
+    location: 'Kanakampalayam',
     area: '8,250 SQ.FT',
     value: '₹ 1.720 Cr',
     progress: 30,

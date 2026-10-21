@@ -2,6 +2,7 @@ import { ArrowRight } from 'lucide-react';
 import { navLinks } from '../../data/siteData';
 import { contactInfo } from '../../data/siteData';
 import logo from '../../assets/logomain.png';
+import WhatsAppIcon from '../shared/WhatsAppIcon';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -60,7 +61,19 @@ export default function Footer() {
             >
               5 - FF, Silver Complex, Sulthan Pettai, Mangalam Road, Tiruppur – 641687
             </a>
-            <a href="tel:+917530074011" className={styles.footerLink}>+91 75300 74011</a>
+            <div className={styles.footerPhoneRow}>
+              <a
+                href="https://wa.me/917530074011"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.waIconBtn}
+                title="Chat on WhatsApp (+91 75300 74011)"
+                aria-label="Chat with Triangle Builders on WhatsApp"
+              >
+                <WhatsAppIcon size={13} color="#ffffff" />
+              </a>
+              <a href="tel:+917530074011" className={styles.footerLink}>+91 75300 74011</a>
+            </div>
             <a href="tel:+917530074033" className={styles.footerLink}>+91 75300 74033</a>
             <a href="mailto:trianglebuilders.tp@gmail.com" className={styles.footerLink}>trianglebuilders.tp@gmail.com</a>
             <span className={styles.footerLink}>GSTIN: 33AAVFT5396H1ZG</span>

@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
 import { useInView } from '../../hooks/useInView';
 import { projects } from '../../data/siteData';
 import buildingImg from '../../assets/building.png';
@@ -54,16 +54,16 @@ export default function Projects() {
     <section className={styles.projects} id="projects">
       <div className={styles.container}>
         <motion.div
-          ref={headerRef}
           className={styles.header}
-          initial={{ opacity: 0, y: 25 }}
-          animate={headerInView ? { opacity: 1, y: 0 } : {}}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-20px' }}
           transition={{ duration: 0.6, ease: EASE }}
         >
           <div>
             <p className={styles.eyebrow}>OUR PROJECTS</p>
             <h2 className={styles.heading}>
-              FEATURED <span className={styles.goldText}>PROJECTS</span>
+              COMPLETED <span className={styles.goldText}>PROJECTS</span>
             </h2>
           </div>
           <div className={styles.controls}>
@@ -85,6 +85,9 @@ export default function Projects() {
         >
           {projects.map((project, i) => {
             const isActive = i === active;
+            const projectName = project.name || project.owner || (project.title ? project.title.split('-')[0].trim() : 'Project');
+            const locationName = project.location || (project.title && project.title.includes('-') ? project.title.split('-')[1].trim() : null);
+
             return (
               <motion.div
                 key={i}
@@ -104,7 +107,7 @@ export default function Projects() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.visualLink}
-                  aria-label={`View photos for ${project.title || `Project ${project.year}`}`}
+                  aria-label={`View photos for ${projectName}'s project`}
                   onClick={(e) => {
                     if (!isActive) {
                       e.preventDefault();
@@ -115,7 +118,7 @@ export default function Projects() {
                   <div className={styles.visual}>
                     <motion.img
                       src={project.image || buildingImg}
-                      alt={project.title ? `${project.title} - Construction project by Triangle Builders in Tiruppur` : `Construction project ${project.year} by Triangle Builders`}
+                      alt={`${projectName}'s project - Construction by Triangle Builders in Tiruppur`}
                       className={styles.projectImg}
                       animate={{ scale: isActive ? 1.03 : 1 }}
                       transition={{ duration: 0.5, ease: EASE }}
@@ -133,7 +136,18 @@ export default function Projects() {
                   </div>
                 </a>
                 <div className={styles.cardInfo}>
-                  <span className={styles.area}>{project.area}</span>
+                  <h3 className={styles.projectName} title={projectName}>
+                    {projectName}
+                  </h3>
+                  <div className={styles.cardMeta}>
+                    {locationName && (
+                      <span className={styles.location} title={locationName}>
+                        <MapPin size={12} className={styles.locIcon} />
+                        {locationName}
+                      </span>
+                    )}
+                    <span className={styles.area}>{project.area}</span>
+                  </div>
                 </div>
               </motion.div>
             );

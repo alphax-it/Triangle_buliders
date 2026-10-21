@@ -194,6 +194,32 @@
   flex-wrap: wrap;
 }
 
+.phoneWithWa {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.waIconBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(37, 211, 102, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.waIconBtn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.5);
+}
+
 .divider {
   color: var(--border);
   font-size: 0.85rem;

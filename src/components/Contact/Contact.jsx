@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Send, MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { useInView } from '../../hooks/useInView';
 import { contactInfo } from '../../data/siteData';
+import WhatsAppIcon from '../shared/WhatsAppIcon';
 import styles from './Contact.module.css';
 
 const iconMap = [MapPin, Phone, Mail, Clock];
@@ -68,9 +69,21 @@ function InfoPanel() {
       <div className={styles.infoItem}>
         <div className={styles.infoIcon}><Phone size={18} strokeWidth={1.8} /></div>
         <div>
-          <h4 className={styles.infoLabel}>Call Us (Click to Dial)</h4>
+          <h4 className={styles.infoLabel}>Call &amp; WhatsApp</h4>
           <div className={styles.phoneLinks}>
-            <a href="tel:+917530074011" className={styles.infoLink}>+91 75300 74011</a>
+            <div className={styles.phoneWithWa}>
+              <a
+                href="https://wa.me/917530074011"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.waIconBtn}
+                title="Chat on WhatsApp (+91 75300 74011)"
+                aria-label="Chat with Triangle Builders on WhatsApp"
+              >
+                <WhatsAppIcon size={14} color="#ffffff" />
+              </a>
+              <a href="tel:+917530074011" className={styles.infoLink}>+91 75300 74011</a>
+            </div>
             <span className={styles.divider}>/</span>
             <a href="tel:+917530074033" className={styles.infoLink}>+91 75300 74033</a>
           </div>
