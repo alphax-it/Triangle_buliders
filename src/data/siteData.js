@@ -53,8 +53,6 @@ export const projects = [
     name: 'Nallasamy',
     location: 'Kovilvazhli',
     area: '4,150 SQ.FT',
-    value: '₹ 0.604 Cr',
-    progress: 18,
     title: 'Nallasamy - Kovilvazhli',
     image: '/projects/project-1.jpg',
     link: 'https://photos.app.goo.gl/GNduhtkqCv3TjE8k8'
@@ -64,9 +62,7 @@ export const projects = [
     name: 'Kumar',
     location: 'Tiruppur',
     area: '7,660 SQ.FT',
-    value: '₹ 1.403 Cr',
-    progress: 32,
-    title: 'Kumar - Electrician',
+    title: 'Kumar - Tiruppur',
     image: '/projects/project-2.jpg',
     link: 'https://photos.app.goo.gl/5MPzV8By84uEHBed8'
   },
@@ -75,41 +71,105 @@ export const projects = [
     name: 'Ragu',
     location: 'Theni',
     area: '11,210 SQ.FT',
-    value: '₹ 1.984 Cr',
-    progress: 48,
     title: 'Ragu - Theni',
     image: '/projects/project-3.jpg',
     link: 'https://photos.app.goo.gl/QVoUP6ghP861S7po8'
+  },
+  {
+    year: 2023,
+    name: 'Divya',
+    location: 'Kanakampalayam',
+    area: '8,250 SQ.FT',
+    title: 'Divya - Kanakampalayam',
+    image: '/projects/project-8.jpg',
+    link: 'https://photos.app.goo.gl/PZETTGKzEZu887jE7'
   },
   {
     year: 2024,
     name: 'Sakthiselvan',
     location: 'Vellanapatti',
     area: '16,837 SQ.FT',
-    value: '₹ 3.177 Cr',
-    progress: 70,
     title: 'Sakthiselvan - Vellanapatti',
     image: '/projects/project-4.jpg',
     link: 'https://photos.app.goo.gl/WMHaSxePvsLmZURd9'
+  },
+  {
+    year: 2024,
+    name: 'Saravanan',
+    location: 'Kovilvazhi',
+    area: '5,400 SQ.FT',
+    title: 'Saravanan - Vivanta - Kovilvali',
+    image: '/projects/project-11.jpg',
+    link: 'https://photos.app.goo.gl/dQdzALcctFE2WK477'
+  },
+  {
+    year: 2024,
+    name: 'Dinesh',
+    location: 'Rakiyapalayam',
+    area: '12,500 SQ.FT',
+    title: 'Dinesh Godown - Rakiyapalayam',
+    image: '/projects/project-13.jpg',
+    link: 'https://photos.app.goo.gl/ivRvVYcVMrxXzvow8'
+  },
+  {
+    year: 2024,
+    name: 'Mathi',
+    location: 'Perumanallur',
+    area: '6,800 SQ.FT',
+    title: 'Mathi - Perumanallur',
+    image: '/projects/project-16.jpg',
+    link: 'https://photos.app.goo.gl/ej3wGKaHyxsiuvcD9'
   },
   {
     year: 2025,
     name: 'Sivaneshan',
     location: 'Karuvampalayam',
     area: '23,877 SQ.FT',
-    value: '₹ 3.448 Cr',
-    progress: 88,
-    title: 'Sivaneshan - Karuvamplayam',
+    title: 'Sivaneshan - Karuvampalayam',
     image: '/projects/project-5.jpg',
     link: 'https://photos.app.goo.gl/jitLcWNJBGEEQP716'
+  },
+  {
+    year: 2025,
+    name: 'Ponvannan',
+    location: 'Nachipalayam',
+    area: '8,450 SQ.FT',
+    title: 'Ponvannan - Nachipalayam',
+    image: '/projects/project-9.jpg',
+    link: 'https://photos.app.goo.gl/NNXpz1VA2h4NnaAz7'
+  },
+  {
+    year: 2025,
+    name: 'Sai Kanna',
+    location: 'Kovilvazhi',
+    area: '7,120 SQ.FT',
+    title: 'Sai Kanna - Kovilvali',
+    image: '/projects/project-10.jpg',
+    link: 'https://photos.app.goo.gl/2YKZDTn3kFZhV82N8'
+  },
+  {
+    year: 2025,
+    name: 'Paul',
+    location: 'Angeripalayam',
+    area: '9,800 SQ.FT',
+    title: 'Paul - Angeripalayam',
+    image: '/projects/project-12.jpg',
+    link: 'https://photos.app.goo.gl/rAGdxNk4xFBKzocH6'
+  },
+  {
+    year: 2025,
+    name: 'VGP',
+    location: 'Tiruppur',
+    area: '11,600 SQ.FT',
+    title: 'VGP - House',
+    image: '/projects/project-14.jpg',
+    link: 'https://photos.app.goo.gl/a57P25ipjJkJ5iCX7'
   },
   {
     year: 2026,
     name: 'Vignesh',
     location: 'Thoravalur',
     area: '9,291 SQ.FT',
-    value: '₹ 2.063 Cr',
-    progress: 42,
     title: 'Vignesh - Thoravalur',
     image: '/projects/project-6.jpg',
     link: 'https://photos.app.goo.gl/Ax7f4ugzHdg1NFvi7'
@@ -119,22 +179,36 @@ export const projects = [
     name: 'VKN',
     location: 'Tiruppur',
     area: '15,400 SQ.FT',
-    value: '₹ 2.950 Cr',
-    progress: 65,
-    title: 'VKN - Appartment',
+    title: 'VKN - Apartment',
     image: '/projects/project-7.jpg',
     link: 'https://photos.app.goo.gl/4tBrsF2wUfQHjimS9'
   },
   {
     year: 2026,
-    name: 'Divya',
-    location: 'Kanakampalayam',
-    area: '8,250 SQ.FT',
-    value: '₹ 1.720 Cr',
-    progress: 30,
-    title: 'Divya - Kanakampalayam',
-    image: '/projects/project-8.jpg',
-    link: 'https://photos.app.goo.gl/PZETTGKzEZu887jE7'
+    name: 'Harsha Cars',
+    location: 'Mannarai',
+    area: '18,200 SQ.FT',
+    title: 'Harsha Cars - Mannarai',
+    image: '/projects/project-15.jpg',
+    link: 'https://photos.app.goo.gl/sUzrSxsoPjXxKDFc6'
+  },
+  {
+    year: 2026,
+    name: 'Ramesh',
+    location: 'SR Nagar',
+    area: '10,500 SQ.FT',
+    title: 'Ramesh - SR Nagar',
+    image: '/projects/project-17.jpg',
+    link: 'https://photos.app.goo.gl/vMcw3xxzPv2pRgrs6'
+  },
+  {
+    year: 2026,
+    name: 'Suresh',
+    location: 'Coimbatore',
+    area: '13,800 SQ.FT',
+    title: 'Suresh - Coimbatore',
+    image: '/projects/project-18.jpg',
+    link: 'https://photos.app.goo.gl/v511jvqfgGfmLLcr8'
   },
 ];
 

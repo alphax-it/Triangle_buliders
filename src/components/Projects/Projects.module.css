@@ -58,6 +58,80 @@
   color: var(--gold);
 }
 
+.yearFilterBar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  padding: 4px 2px 8px;
+  scrollbar-width: none;
+}
+
+.yearFilterBar::-webkit-scrollbar {
+  display: none;
+}
+
+.yearFilters {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(233, 221, 187, 0.28);
+  padding: 5px;
+  border-radius: 100px;
+  border: 1px solid rgba(233, 221, 187, 0.6);
+}
+
+.yearTab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 100px;
+  border: none;
+  background: transparent;
+  color: var(--secondaryText);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.yearTab:hover {
+  color: var(--text);
+  background: rgba(244, 185, 0, 0.15);
+}
+
+.yearTabActive {
+  background: var(--gold);
+  color: var(--text);
+  box-shadow: 0 3px 14px rgba(244, 185, 0, 0.35);
+}
+
+.yearTabActive:hover {
+  background: var(--gold);
+  color: var(--text);
+}
+
+.yearCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  padding: 1px 6px;
+  border-radius: 100px;
+  background: rgba(0, 0, 0, 0.08);
+  font-weight: 800;
+}
+
+.yearTabActive .yearCount {
+  background: rgba(23, 23, 23, 0.15);
+  color: var(--text);
+}
+
 .carousel {
   display: flex;
   gap: 16px;
@@ -105,6 +179,14 @@
   letter-spacing: 0.05em;
   border-radius: 100px;
   z-index: 2;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.yearBadge:hover {
+  transform: scale(1.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .visual {
