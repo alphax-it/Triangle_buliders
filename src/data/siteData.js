@@ -2,6 +2,7 @@ export const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'About Us', href: '#about' },
   { label: 'Services', href: '#services' },
+  { label: 'Packages', href: '#packages' },
   { label: 'Projects', href: '#projects' },
   { label: 'Why Us', href: '#why-us' },
   { label: 'Loan & Approval', href: '#loan' },
@@ -247,6 +248,6 @@ export const processSteps = [
 export const contactInfo = [
   { label: 'Address', value: '5 - FF, Silver Complex, Sulthan Pettai, Mangalam Road, Tiruppur – 641687.' },
   { label: 'Phone', value: '75300 74011 / 75300 74033' },
-  { label: 'Email', value: 'trianglebuilders.tp@gmail.com' },
+  { label: 'Email', value: 'triangletn@gmail.com' },
   { label: 'GSTIN', value: '33AAVFT5396H1ZG' },
 ];

@@ -94,8 +94,8 @@ function InfoPanel() {
         <div className={styles.infoIcon}><Mail size={18} strokeWidth={1.8} /></div>
         <div>
           <h4 className={styles.infoLabel}>Email Address</h4>
-          <a href="mailto:trianglebuilders.tp@gmail.com" className={styles.infoLink}>
-            trianglebuilders.tp@gmail.com
+          <a href="mailto:triangletn@gmail.com" className={styles.infoLink}>
+            triangletn@gmail.com
           </a>
         </div>
       </div>

@@ -97,7 +97,6 @@ export default function Projects() {
           <div className={styles.yearFilters} role="tablist" aria-label="Filter completed projects by year">
             {years.map((yr) => {
               const isSelected = selectedYear === yr;
-              const count = yr === 'ALL' ? projects.length : projects.filter((p) => p.year === yr).length;
               return (
                 <button
                   key={yr}
@@ -108,7 +107,6 @@ export default function Projects() {
                   onClick={() => setSelectedYear(yr)}
                 >
                   <span>{yr}</span>
-                  <span className={styles.yearCount}>{count}</span>
                 </button>
               );
             })}

@@ -75,7 +75,7 @@ export default function Footer() {
               <a href="tel:+917530074011" className={styles.footerLink}>+91 75300 74011</a>
             </div>
             <a href="tel:+917530074033" className={styles.footerLink}>+91 75300 74033</a>
-            <a href="mailto:trianglebuilders.tp@gmail.com" className={styles.footerLink}>trianglebuilders.tp@gmail.com</a>
+            <a href="mailto:triangletn@gmail.com" className={styles.footerLink}>triangletn@gmail.com</a>
             <span className={styles.footerLink}>GSTIN: 33AAVFT5396H1ZG</span>
           </div>
         </div>

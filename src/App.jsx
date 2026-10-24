@@ -4,6 +4,7 @@ import Hero from './components/Hero/Hero';
 import Stats from './components/Stats/Stats';
 import About from './components/About/About';
 import Services from './components/Services/Services';
+import Packages from './components/Packages/Packages';
 import Projects from './components/Projects/Projects';
 import WhyChooseUs from './components/WhyChooseUs/WhyChooseUs';
 import Process from './components/Process/Process';
@@ -24,6 +25,7 @@ export default function App() {
         <Stats />
         <About />
         <Services />
+        <Packages />
         <Projects />
         <WhyChooseUs />
         <Process />

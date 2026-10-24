@@ -1,0 +1,741 @@
+.section {
+  padding: 100px 0 80px;
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  width: min(1320px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--deepGold);
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 3.8vw, 54px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.goldText {
+  color: var(--deepGold);
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--secondaryText);
+  line-height: 1.65;
+}
+
+/* ─── Packages Card Grid (4 Cards) ─── */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+  align-items: stretch;
+}
+
+.packageCard {
+  background: var(--creamLight);
+  border: 1.5px solid var(--border);
+  border-radius: 18px;
+  padding: 32px 22px 26px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.packageCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  border-color: var(--gold);
+}
+
+.packageCardFeatured {
+  background: #FFFDF8;
+  border: 2px solid var(--gold);
+  box-shadow: 0 8px 30px rgba(244, 185, 0, 0.16);
+}
+
+.popularBadge {
+  position: absolute;
+  top: -13px;
+  right: 20px;
+  background: linear-gradient(135deg, var(--gold), var(--deepGold));
+  color: #171717;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 100px;
+  box-shadow: 0 4px 12px rgba(217, 154, 0, 0.35);
+}
+
+.mobileSummaryHeader {
+  display: none;
+}
+
+.desktopCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.desktopPriceBox {
+  background: var(--creamDark);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(233, 221, 187, 0.6);
+}
+
+.mobileHighlight {
+  display: none;
+}
+
+.collapsibleBody {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.iconWrapper {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(244, 185, 0, 0.14);
+  color: var(--deepGold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.packageCardFeatured .iconWrapper {
+  background: var(--gold);
+  color: #171717;
+}
+
+.cardTitles {
+  flex: 1;
+  min-width: 0;
+}
+
+.packageName {
+  font-family: var(--font-heading);
+  font-size: 21px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.packageTagline {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--secondaryText);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+}
+
+.priceBox {
+  background: var(--creamDark);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(233, 221, 187, 0.6);
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.currency {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.priceAmount {
+  font-family: var(--font-heading);
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  line-height: 1;
+}
+
+.priceUnit {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--secondaryText);
+  text-transform: uppercase;
+}
+
+.priceHighlight {
+  font-size: 12px;
+  color: var(--secondaryText);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.highlightsList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.checkIcon {
+  color: #16A34A;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.itemLabel {
+  font-weight: 700;
+  color: var(--text);
+  margin-right: 4px;
+}
+
+.itemValue {
+  color: var(--secondaryText);
+}
+
+.cardFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.quoteBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 12px 18px;
+  background: var(--gold);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quoteBtn:hover {
+  background: var(--deepGold);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(217, 154, 0, 0.35);
+}
+
+.quoteBtnOutline {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid var(--border);
+}
+
+.quoteBtnOutline:hover {
+  background: var(--creamDark);
+  border-color: var(--gold);
+  box-shadow: none;
+}
+
+.quoteBtnDark {
+  background: #171717;
+  color: #FFFFFF;
+}
+
+.quoteBtnDark:hover {
+  background: #2b2b2b;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* ─── Toggle Button for Full Table ─── */
+.toggleSection {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.compareToggleBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--creamLight);
+  border: 1.5px solid var(--border);
+  padding: 12px 26px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.compareToggleBtn:hover {
+  border-color: var(--gold);
+  background: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+/* ─── Full Comparison Table ─── */
+.tableContainer {
+  background: var(--creamLight);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+.tableHeaderBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tableTitle {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.validityNote {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--secondaryText);
+  background: var(--creamDark);
+  padding: 5px 14px;
+  border-radius: 100px;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.comparisonTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+  text-align: left;
+  min-width: 900px;
+}
+
+.comparisonTable th,
+.comparisonTable td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(233, 221, 187, 0.6);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.comparisonTable th {
+  background: var(--creamDark);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text);
+  position: sticky;
+  top: 0;
+}
+
+.colSno {
+  width: 50px;
+  text-align: center;
+}
+
+.colMaterial {
+  width: 180px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.colSilver {
+  background: rgba(0, 0, 0, 0.015);
+}
+
+.colGold {
+  background: rgba(244, 185, 0, 0.03);
+}
+
+.colDiamond {
+  background: rgba(244, 185, 0, 0.06);
+}
+
+.colPlatinum {
+  background: rgba(244, 185, 0, 0.11);
+}
+
+.comparisonTable tr:hover td {
+  background: rgba(244, 185, 0, 0.15);
+}
+
+.badgeSilver {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.06);
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 4px;
+}
+
+.badgeGold {
+  display: inline-block;
+  background: rgba(217, 154, 0, 0.2);
+  color: #171717;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 4px;
+}
+
+.badgeDiamond {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 4px;
+}
+
+.badgePlatinum {
+  display: inline-block;
+  background: var(--gold);
+  color: #171717;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 4px;
+}
+
+/* ─── Benefits and Notes Banner ─── */
+.bottomGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+}
+
+.benefitsCard,
+.notesCard {
+  background: var(--creamLight);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 30px;
+}
+
+.boxHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.boxHeader svg {
+  color: var(--deepGold);
+}
+
+.simpleList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.simpleList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--secondaryText);
+}
+
+.simpleList li svg {
+  color: var(--deepGold);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.noteItem {
+  font-size: 12.5px !important;
+  color: #6B665A !important;
+}
+
+/* ─── Responsive Media Queries ─── */
+@media (max-width: 1200px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .bottomGrid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hide desktop headers and price box on mobile */
+  .desktopCardHeader,
+  .desktopPriceBox {
+    display: none;
+  }
+
+  /* Package card becomes a compact tap item */
+  .packageCard {
+    padding: 0;
+    overflow: hidden;
+    border-radius: 16px;
+  }
+
+  .popularBadge {
+    top: 10px;
+    right: 14px;
+    font-size: 9px;
+    padding: 3px 9px;
+    z-index: 2;
+  }
+
+  /* Mobile summary header that is always visible */
+  .mobileSummaryHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 18px;
+    cursor: pointer;
+    background: transparent;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background 0.2s ease;
+  }
+
+  .mobileSummaryHeader:active {
+    background: rgba(244, 185, 0, 0.08);
+  }
+
+  .mobileLeft {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .iconWrapperSmall {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: rgba(244, 185, 0, 0.16);
+    color: var(--deepGold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .packageCardFeatured .iconWrapperSmall {
+    background: var(--gold);
+    color: #171717;
+  }
+
+  .packageNameMobile {
+    font-family: var(--font-heading);
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+
+  .packageTaglineMobile {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--secondaryText);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .mobileRight {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: right;
+  }
+
+  .mobilePrice {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 1;
+  }
+
+  .priceAmountMobile {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text);
+  }
+
+  .priceUnitMobile {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--secondaryText);
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .mobileChevron {
+    color: var(--secondaryText);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+  }
+
+  .chevronRotated {
+    transform: rotate(180deg);
+    color: var(--deepGold);
+  }
+
+  /* Collapsible Body on Mobile */
+  .collapsibleBody {
+    display: none;
+    padding: 0 18px 20px 18px;
+    border-top: 1px dashed var(--border);
+    animation: fadeIn 0.25s ease;
+  }
+
+  .collapsibleOpen {
+    display: flex;
+  }
+
+  .cardMobileExpanded {
+    border-color: var(--gold);
+    box-shadow: 0 8px 24px rgba(244, 185, 0, 0.12);
+  }
+
+  .mobileHighlight {
+    display: block;
+    font-size: 12.5px;
+    color: var(--secondaryText);
+    background: var(--creamDark);
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin: 14px 0 16px 0;
+    line-height: 1.45;
+  }
+
+  .highlightsList {
+    margin-bottom: 20px;
+    gap: 9px;
+  }
+
+  .highlightItem {
+    font-size: 12px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 60px 0 40px;
+  }
+
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  .tableContainer {
+    padding: 14px 10px;
+  }
+
+  .comparisonTable th,
+  .comparisonTable td {
+    padding: 9px 8px;
+    font-size: 11.5px;
+  }
+}
